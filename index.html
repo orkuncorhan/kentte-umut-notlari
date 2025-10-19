@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kentte Umut Notları</title>
+  <meta name="description" content="Kentte küçük ama etkili umut notları. Paylaş, keşfet, ilham ver.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <a href="#" class="logo" aria-label="Kentte Umut Notları Anasayfa">🌱 Kentte Umut Notları</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-menu">Menü</button>
+      <ul id="site-menu" class="menu">
+        <li><a href="#manifesto">Manifesto</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#ekle">Not Ekle</a></li>
+        <li><a href="#sss">SSS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Kentte küçük notlar, büyük umutlar</h1>
+        <p>Küçük bir cümlenin bir kente neler yapabileceğini birlikte görelim. Kaldırım kenarındaki bir çiçeğe, bir pencere ışığına, bir tebessüme tutunalım.</p>
+        <a class="button" href="#ekle">Kendi notunu ekle</a>
+        <a class="button button-outline" href="#galeri">Notları keşfet</a>
+      </div>
+      <div class="hero-img">
+        <img src="assets/img/placeholder-hero.svg" alt="Renkli yapışkan notlar ve şehir silueti illüstrasyonu" />
+      </div>
+    </section>
+
+    <section id="manifesto" class="section container">
+      <h2>Manifesto</h2>
+      <p>Umut, şehir dokusunda gizli bir ağdır. Amacımız, gündelik hayatın arasına sıkışmış küçük iyilikleri görünür kılmak ve paylaşmaktır. Estetik kaygıdan çok <strong>sadelik</strong> ve <strong>samimiyet</strong> önemlidir.</p>
+      <ul class="checks">
+        <li>Kısa ve öz cümleler</li>
+        <li>Görsel etik: kişilerin yüzünü izinsiz paylaşma</li>
+        <li>Mekânı onurlandır: zarar verme, iz bırakma</li>
+      </ul>
+    </section>
+
+    <section id="galeri" class="section container">
+      <div class="section-head">
+        <h2>Seçilmiş Notlar</h2>
+        <div class="filters">
+          <label>
+            <span class="sr-only">Arama</span>
+            <input id="search" type="search" placeholder="Ara: umut, ışık, deniz..." />
+          </label>
+          <select id="tagFilter" aria-label="Etikete göre filtrele">
+            <option value="">Tümü</option>
+            <option value="doğa">Doğa</option>
+            <option value="iyilik">İyilik</option>
+            <option value="kent">Kent</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="cards" class="cards" aria-live="polite"></div>
+    </section>
+
+    <section id="ekle" class="section container">
+      <h2>Not Ekle</h2>
+      <form id="noteForm" class="form" novalidate>
+        <div class="field">
+          <label for="noteText">Notun</label>
+          <textarea id="noteText" name="noteText" rows="4" maxlength="180" placeholder="Bugün sokaktaki kedinin gözleri güneşti."></textarea>
+          <small class="help">En fazla 180 karakter.</small>
+        </div>
+
+        <div class="field">
+          <label for="noteTag">Etiket</label>
+          <select id="noteTag" name="noteTag" required>
+            <option value="">Seç</option>
+            <option value="doğa">Doğa</option>
+            <option value="iyilik">İyilik</option>
+            <option value="kent">Kent</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="notePlace">Yer (opsiyonel)</label>
+          <input id="notePlace" name="notePlace" type="text" placeholder="Kültürpark, Alsancak"/>
+        </div>
+
+        <div class="field-inline">
+          <label class="checkbox">
+            <input id="consent" type="checkbox" required>
+            <span>Etik kuralları okudum ve kabul ediyorum.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="button">Ekle</button>
+        <p id="formMsg" class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="sss" class="section container">
+      <h2>Sık Sorulanlar</h2>
+      <details>
+        <summary>Bu proje ne?</summary>
+        <p>Kentte Umut Notları, şehirde karşılaştığın küçük ama anlamlı anları kısa cümlelerle paylaşmanı teşvik eden bağımsız bir mikro proje.</p>
+      </details>
+      <details>
+        <summary>Notlar nerede saklanıyor?</summary>
+        <p>Şimdilik bu demo sitede tarayıcı içinde (yerel depolama) saklanır. Canlıya çıkarınca bir veritabanı ekleyebiliriz.</p>
+      </details>
+      <details>
+        <summary>Görsel ekleyebilir miyim?</summary>
+        <p>Bu ilk sürüm yazı odaklıdır. İleride görsel yükleme ve harita konumlandırmayı ekleyebiliriz.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Kentte Umut Notları • Basitlik ve samimiyetle</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
