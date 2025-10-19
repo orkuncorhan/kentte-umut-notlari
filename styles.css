@@ -129,7 +129,7 @@ textarea,input,select{
 
 
 
-..leaf{
+.leaf{
   fill: none;
   stroke: var(--accent, #7ad87a); /* fallback */
   stroke-width: 2.4;
@@ -144,7 +144,7 @@ textarea,input,select{
 .leaf-l{ transform-origin: center; }
 .leaf-r{ transform-origin: center; }
 
-..flower{
+.leaf{
   fill: var(--accent-2, #4db3ff); /* fallback */
   animation: bloom .6s ease-out forwards;
   animation-delay: calc(var(--d) + 1.1s);
