@@ -117,7 +117,7 @@ textarea,input,select{
 
 .stem{
   fill: none;
-  stroke: var(--accent);
+  stroke: var(--accent, #7ad87a); /* fallback eklendi */
   stroke-width: 3;
   stroke-linecap: round;
   stroke-dasharray: 120;
@@ -126,6 +126,8 @@ textarea,input,select{
   animation-delay: var(--d);
   filter: drop-shadow(0 2px 6px rgba(0,0,0,.4));
 }
+
+
 
 .leaf{
   fill: none;
