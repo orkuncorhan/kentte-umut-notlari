@@ -144,6 +144,17 @@ textarea,input,select{
 .leaf-l{ transform-origin: center; }
 .leaf-r{ transform-origin: center; }
 
+.flower{
+  fill: var(--accent-2, #4db3ff);
+  opacity: 0;
+  transform: scale(0.001);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pop .6s ease-out forwards;
+  animation-delay: calc(var(--d) + 1.1s);
+  filter: drop-shadow(0 2px 8px rgba(77,179,255,.5));
+}
+
 .leaf{
   fill: var(--accent-2, #4db3ff); /* fallback */
   animation: bloom .6s ease-out forwards;
@@ -158,6 +169,11 @@ textarea,input,select{
 @keyframes bloom{
   from { r: 0; opacity: 0; }
   to   { r: 8; opacity: 1; }
+}
+
+@keyframes pop{
+  0%   { transform: scale(0.001); opacity: 0; }
+  100% { transform: scale(1);     opacity: 1; }
 }
 
 /* @media (prefers-reduced-motion: reduce){
