@@ -129,9 +129,9 @@ textarea,input,select{
 
 
 
-.leaf{
+..leaf{
   fill: none;
-  stroke: var(--accent);
+  stroke: var(--accent, #7ad87a); /* fallback */
   stroke-width: 2.4;
   stroke-linecap: round;
   stroke-dasharray: 60;
@@ -140,15 +140,17 @@ textarea,input,select{
   animation-delay: calc(var(--d) + .7s);
 }
 
+
 .leaf-l{ transform-origin: center; }
 .leaf-r{ transform-origin: center; }
 
-.flower{
-  fill: var(--accent-2);
+..flower{
+  fill: var(--accent-2, #4db3ff); /* fallback */
   animation: bloom .6s ease-out forwards;
   animation-delay: calc(var(--d) + 1.1s);
   filter: drop-shadow(0 2px 8px rgba(77,179,255,.5));
 }
+
 
 /* Keyframes */
 @keyframes grow{ to { stroke-dashoffset: 0; } }
@@ -158,8 +160,14 @@ textarea,input,select{
   to   { r: 8; opacity: 1; }
 }
 
-/* Az hareket isteyen kullanıcılar için */
-@media (prefers-reduced-motion: reduce){
-  .stem,.leaf,.flower{ animation: none !important; stroke-dashoffset: 0; }
-  .flower{ r: 8; opacity: 1; }
-}
+/* @media (prefers-reduced-motion: reduce){
+  .stem,.leaf,.flower{
+    animation: none !important;
+    stroke-dashoffset: 0;
+  }
+  .flower{
+    r: 8;
+    opacity: 1;
+  }
+} */
+
